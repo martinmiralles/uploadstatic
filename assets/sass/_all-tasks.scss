@@ -1,0 +1,260 @@
+#all-tasks{
+  height: 100%;
+  overflow: auto;
+  .header{ //start of a section
+    background: url('https://static.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg')
+    center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    color: white;
+    // height: 300px;
+    background-size: cover;
+    .top{
+      background: rgba(46, 186, 238, .5); ///1st 3 numbers are regular RGB, the last one is the OPACITY
+      padding: 50px 15px;
+      text-align: right;
+      position: relative;
+      .logo{
+        float: left;
+        font-family: 'Megrim', cursive;
+        font-size: 65px;
+      }
+      .tasks-total{
+        position: relative;
+        top: -20px;
+        .task{
+          // display: inline-block;
+          .number{
+            color: $lightPurple;
+            font-size: 60px;
+            margin: 0px 10px 0 0;
+            position: relative;
+            top: 15px;
+            font-weight: 100;
+          }
+        }
+      }
+    }
+    .add-circle{
+      position: absolute;
+      background: black;
+      border-radius: 50%;
+      top: 125px;
+      right: 25px;
+      padding: 1px 4px;
+      .fa{
+        color: $lightBlue;
+        font-size: 50px;
+      }
+    }
+  }
+  .content-area{  //start of a section
+    color: red;
+    width: 100%;
+    overflow: auto;
+    .tasks-container{
+      margin: 55px;
+      .task-box{
+        position: relative;
+        padding: 20px;
+        border-bottom: 2px solid #D1D1D1; //a litle shadow on the bottom
+        margin: 0px -50px 20px -50px;
+        background: white;
+        .title{
+          color: black;
+          font-size: 24px;
+        }
+        .date{
+          margin: 15px 0 0 0;
+          color: #ABABAB;
+          font-size: 14px;
+        }
+        .check-box{
+          padding: 5px;
+          border-radius: 10px;
+          border: 3px solid #ABABAB;
+          display: inline-block;
+          position: absolute;
+          top: 25px;
+          right: 25px;
+          font-size: 32px;
+          color: $lightBlue;
+        }
+      }
+    }
+  }
+
+  //start of section
+  .task-form{
+    background-color: $lightBlue;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    color: $white;
+    padding: 50px 0;
+    // display: none;
+    transform: translate(0, 100%);
+    transition: all .6s ease-in-out;
+    &.active{
+        transform: translate(0, 0);
+    }
+    .close-btn{
+      position: absolute;
+      top: 35px;
+      right: 35px;
+      padding: 15px;
+      cursor: pointer;
+      .fa{
+        font-size: 36px;
+      }
+    }
+    form{
+      display: block;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+    h3{
+      margin: 50px 0;
+      font-size: 36px;
+      text-align: center;
+    }
+    .form-group{
+      margin-bottom: 20px;
+    }
+    label{
+      font-family: 'Roboto', cursive;
+      font-weight: 300;
+      font-size: 24px;
+      display: block;   //makes the field title go on top of the actual field
+      text-transform: capitalize;
+      margin: 0 0 15px 0;
+    }
+    input[type="text"], textarea{
+      width: 100%;
+      background: rgba(255, 255, 255, .1);
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, .7);
+      font-family: 'Roboto', cursive;
+      font-weight: 300;
+      font-size: 35px;
+      &:focus{
+        border: none;
+        outline: none;
+      }
+    }
+    textarea{
+      height: 250px;
+    }
+    button{
+      background: $darkBlue;
+      padding: 15px 20px;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: $white;
+
+    }
+  }
+}
+
+.container{
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  // background: white;
+  width: 100%;
+  padding: 0 15px;
+}
+
+// LAPTOPS
+@media screen and (min-width:1200px) { //because 768px are iPads / tablets
+  #all-tasks {
+    .header{
+      .top{
+        // .logo{
+        //   font-size: 65px;
+        // }
+        .add-circle{
+          position: absolute;
+          background: black;
+          border-radius: 50%;
+          right: 25px;
+          padding: 1px 4px;
+          /* bottom: -25px; */
+          top: 195px;
+        }
+      }
+    }
+  }
+}
+
+// TABLETS
+@media screen and (max-width:1199px)
+{ //because 768px are iPads / tablets
+  #all-tasks {
+    .header{
+      .top{
+        // .logo{
+        //   font-size: 75px;
+        // }
+        .add-circle{
+          position: absolute;
+          background: black;
+          border-radius: 50%;
+          right: 25px;
+          padding: 1px 4px;
+          /* bottom: -25px; */
+          top: 195px;
+        }
+      }
+    }
+  }
+}
+
+// PHONES
+@media screen and (max-width:767px) { //because 768px are iPads / tablets
+  #all-tasks {
+    .header{
+      .top{
+        .logo{
+          font-size: 36px;
+        }
+        .tasks-total{
+          top: 0;
+          .task{
+            .number{
+              color: $lightPurple;
+              font-size: 24px !important;
+              margin: 0px 10px 0 0;
+              position: relative;
+              top: 3px;
+              font-weight: 375;
+            }
+          }
+        }
+        .add-circle{
+          position: absolute;
+          background: black;
+          border-radius: 50%;
+          right: 25px;
+          padding: 1px 4px;
+          /* bottom: -25px; */
+          top: 125px;
+        }
+      }
+    }
+
+    .task-form{
+      form{
+        display: block;
+        max-width: 400px !important;
+        margin: 0 auto;
+        padding: 20px;
+      }
+    }
+  }
+}
